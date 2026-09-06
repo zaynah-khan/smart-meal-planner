@@ -13,9 +13,11 @@ A full-stack application built to simplify weekly meal prepping and dynamically 
 - *Database:* SQLite3
 
 ## How To Run Locally
+* init_db.py needs running first, since the .db file isn't committed
+
 1. Clone the repository:
     bash
-    git clone https://github.com
+    git clone https://github.com/zaynah-khan/smart-meal-planner.git
 
 2. Navigate to the project directory:
     bash
@@ -23,4 +25,4 @@ A full-stack application built to simplify weekly meal prepping and dynamically 
 
 3. Run the application:
     bash
-    python main.py
+    python app.py
