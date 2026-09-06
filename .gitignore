@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+
+# Database (generated — schema.sql is the source of truth)
+meal_planner.db
+*.db
+
+# Environment variables / secrets
+.env
+
+# OS/editor junk
+.DS_Store
+.vscode/
