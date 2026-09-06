@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>🍳 Meal Planner</h1>
+
+    <nav>
+        <button data-view="recipes" class="nav-btn active">Recipes</button>
+        <button data-view="planner" class="nav-btn">Weekly Plan</button>
+        <button data-view="shopping" class="nav-btn">Shopping List</button>
+    </nav>
+
+    <!-- Day 1-2: working example -->
+    <section id="recipes-view">
+        <h2>Add a Recipe</h2>
+        <form id="recipe-form">
+            <input type="text" id="recipe-name" placeholder="Recipe name" required>
+            <input type="number" id="recipe-servings" placeholder="Servings" value="4" min="1">
+            <input
+                type="text"
+                id="recipe-tags"
+                placeholder="Tags, e.g. quick, vegetarian, dinner"
+            >
+            <div id="ingredient-rows">
+                <div class="ingredient-row">
+                    <input type="text" class="ing-name" placeholder="Ingredient">
+                    <input type="number" class="ing-qty" placeholder="Qty" step="0.1">
+                    <input type="text" class="ing-unit" placeholder="Unit (g, ml, whole...)">
+
+                    <select class="ing-category">
+                        <option value="produce">Produce</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="meat">Meat</option>
+                        <option value="pantry">Pantry</option>
+                        <option value="frozen">Frozen</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" id="add-ingredient-row">+ Add ingredient</button>
+            <textarea id="recipe-instructions" placeholder="Instructions"></textarea>
+            <button type="submit">Save Recipe</button>
+        </form>
+
+        <h2>Your Recipes</h2>
+        <div id="recipe-list"></div>
+    </section>
+
+    <!-- Day 3-4: TODO — build this out -->
+    <section id="planner-view" style="display:none">
+        <h2>Weekly Plan</h2>
+        <p><em>TODO: build a 7-day x 3-slot grid here. For each cell, a dropdown
+        of your saved recipes, calling POST /api/meal-plan on change.</em></p>
+        <div id="planner-grid"></div>
+    </section>
+
+    <!-- Day 5-6: TODO — build this out -->
+    <section id="shopping-view" style="display:none">
+        <h2>Shopping List</h2>
+        <p><em>TODO: fetch GET /api/shopping-list and render it grouped by category,
+        with checkboxes so you can tick items off in the shop.</em></p>
+        <div id="shopping-list"></div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
